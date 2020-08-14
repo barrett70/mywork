@@ -1,0 +1,43 @@
+{% extends 'navbase.html' %}
+
+{% block title %}
+    <title>Homepage - DLOCK</title>
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+<form align = "center">
+
+    {% if user.is_authenticated %}
+
+    <div class="view" style="background-image: url('https://cdn-images-1.medium.com/max/1200/1*m7Kktezf98gz6Adpl5DGBQ.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <div class="content">
+            <font face="Arial"><h2 style="padding:60px; color:#3498DB; "><b>Hiii   {{ user.username }}!  Welcome to Dlock you can store your document here!!!</b></h2>
+        </div>
+        <p><a href="{% url 'logout' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >Logout</a></p>
+        <pre style="padding:60px;">
+        </pre>
+    </div>
+
+    {% else %}
+
+    <div class="view" style="background-image: url('https://img.freepik.com/free-vector/white-background-with-blue-tech-hexagon_1017-19366.jpg?size=626&ext=jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+
+            <font face="Arial"><h4 style="color:#3498DB;"><strong>If you are also thinking <svg class="bi bi-box-arrow-in-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M4.646 8.146a.5.5 0 0 1 .708 0L8 10.793l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-1 0v-9A.5.5 0 0 1 8 1z"/>
+                <path fill-rule="evenodd" d="M1.5 13.5A1.5 1.5 0 0 0 3 15h10a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 13 4h-1.5a.5.5 0 0 0 0 1H13a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-8A.5.5 0 0 1 3 5h1.5a.5.5 0 0 0 0-1H3a1.5 1.5 0 0 0-1.5 1.5v8z"/>
+            </svg> the same then Dlock is here to solve your this problem.</strong></h4></font>
+
+
+        <pre>
+            <img src= "{% static "/images/secureprint.jpg" %}" class="mx-auto d-block img-fluid" style="width:50%;height:auto;">
+            <p> <font face="Arial"><h5 style="color: #3498DB; "><b>You already have an account.</b></h5></font></p><a href="{% url 'login' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login</a>
+            <p> <font face="Arial"><h5 style="color: #3498DB"><b>Don,t have any account yet.</b></h5></font></p><a href="{% url 'register' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register</a>
+        </pre>
+    </div>
+    {% endif %}
+</form>
+{% endblock content%}

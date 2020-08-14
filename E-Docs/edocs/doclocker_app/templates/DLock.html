@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block title %}
+<title> DLock manager - Edocs</title>
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+    <font face="Arial">
+        <div class="container" style="text-align: center; padding: 20px;color:#3498DB;">
+            <h1><b>{{ DLock_text }}</b></h1>
+        </div>
+    </font>
+{% endblock content %}
+
+{% block slider %}
+<div class="view" style="background-image: url('http://airofy.com/theme/img/solutions/secure_document/slide_04.png'); background-repeat: no-repeat; background-size: cover; background-position: center; background-attachment:fixed">
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="padding: 30px">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src= "{% static "/images/digital-locker.gif" %}" class="d-block w-100" alt="digi-locker-o" width="1200" height="550">
+            </div>
+            <div class="carousel-item">
+                <img src= "{% static "/images/animated_FoldersyncBlueAlt.gif" %}" class="d-block w-100" alt="digi-locker-1" width="1200" height="550">
+            </div>
+            <div class="carousel-item">
+                <img src = "{% static "/images/share.gif" %}" class="d-block w-100" alt="digi-locker-3" width="1200" height="550">
+            </div>
+        </div>
+        {% endblock slider %}
+
+        {% block howwork %}
+
+        <div class="col-md-12 col-sm-12 hidden-xs panelsrow text-center " style="padding-bottom: 60px; padding-top: 60px; width: 100%;">
+            <div class="container" style="width=1000px;">
+
+
+                <p class="section-header"   style="font-size: 30px; font-weight: 650;">
+                    How it Works?
+                </p>
+
+            </div>
+            <div class="row container">
+                <div class="col-md-2 col-sm-2 text-center" style="float: left; margin-left: 80px;">
+
+                    <div class="col-md-2 col-sm-2  text-center">
+                        <div class="profile-circle" style="background-color: rgba(0,0,0,0);">
+                            <img src= {% static "/images/signup.png" %} class = "icon_border" style="padding: .4em .2em; width="150" height="150"">
+                        </div>
+                    </div>
+
+                    <p><a href="{% url 'register' %}"><font color="black"> Register </font></a></p>
+                </div>
+
+
+                <div class="col-md-2 col-sm-2  text-center" style="float: left; margin-left: 80px;">
+                    <div class="profile-circle" style="background-color: rgba(0,0,0,0);">
+
+                        <img src="{% static "/images/login.png" %}" class="icon_border" style="padding: .4em .2em;" width="150" height="150">
+                    </div>
+
+                    <p><a href="{% url 'login' %}"><font color="black"> Login </font></a></p>
+
+                </div>
+
+
+                <div class="col-md-2 col-sm-2 text-center" style="float: right; margin-left: 80px;">
+                    <div class="profile-circle" style="background-color: rgba(0,0,0,0);">
+
+                        <img src="{% static "/images/doc.png" %}" class="icon_border" style="padding: .4em .2em; width="150" height="150"">
+                    </div>
+
+                    <p>Get documents</p>
+                </div>
+
+
+                <div class="col-md-2 col-sm-2  text-center" style="float: right; margin-left: 80px;" >
+                    <div class="profile-circle" style="background-color: rgba(0,0,0,0);">
+
+                        <img src="{% static "/images/verified.png" %}" class="icon_border" style="padding: .4em .2em; width="150" height="150"">
+                    </div>
+
+                    <p>Documents verified </p>
+                </div>
+
+
+                <div class="col-md-1 col-sm-1 col-xs-1" ></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock howwork %}
+
+
+{% block subform %}
+<div class="jumbotron text-center">
+    <h1>DLock - A digital Locker</h1>
+    <p>Want to know more? Join our mailing list!</p>
+    <form class="form-inline justify-content-center"  method="post" enctype="text/plain">
+        <div class="input-group">
+
+            <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-danger"> Click here</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock subform %}
+
